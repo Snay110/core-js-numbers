@@ -206,7 +206,7 @@ function roundToPowerOfTen(num, pow) {
 function isPrime(n) {
   if (n < 2) return false;
 
-  for (let i = 2; i <= Math.sqrt(n); i + 1) {
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
     if (n % i === 0) {
       return false;
     }
@@ -289,7 +289,7 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let sum = 0;
-  for (let i = 1; i <= n; i + 1) {
+  for (let i = 1; i <= n; i += 1) {
     sum += i;
   }
   return sum;
@@ -308,10 +308,10 @@ function getSumToN(n) {
  */
 function getSumOfDigits(num) {
   let sum = 0;
-
-  while (num) {
+  let samam = num;
+  while (samam) {
     sum += num % 10;
-    sum = Math.floor(num / 10);
+    samam = Math.floor(samam / 10);
   }
   return sum;
 }
@@ -331,7 +331,7 @@ function isPowerOfTwo(num) {
   if (num <= 0) {
     return false;
   }
-  return (num & (num - 1)) === 0;
+  return (num && num - 1) === 0;
 }
 
 /**
@@ -404,8 +404,8 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
 }
 
 /**
