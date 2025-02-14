@@ -254,8 +254,7 @@ function toNumber(value, def) {
  *   0  => 0
  */
 function getCube(num) {
-  const cub = num * num * num;
-  return cub;
+  return num ** 3;
 }
 
 /**
@@ -310,7 +309,7 @@ function getSumOfDigits(num) {
   let sum = 0;
   let samam = num;
   while (samam) {
-    sum += num % 10;
+    sum += samam % 10;
     samam = Math.floor(samam / 10);
   }
   return sum;
@@ -331,7 +330,12 @@ function isPowerOfTwo(num) {
   if (num <= 0) {
     return false;
   }
-  return (num && num - 1) === 0;
+  let npmNum = num;
+  while (npmNum > 1) {
+    if (npmNum % 2 !== 0) return false;
+    npmNum /= 2;
+  }
+  return true;
 }
 
 /**
