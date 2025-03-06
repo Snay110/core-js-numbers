@@ -378,7 +378,7 @@ function numberToStringInBase(number, base) {
  * 12345, 2    => '1.23e+4'
  */
 function toExponential(number, fractionDigits) {
-  return number.toExponential([fractionDigits]);
+  return number.toExponential(fractionDigits);
 }
 
 /**
@@ -422,8 +422,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return number.valueOf();
 }
 
 /**
